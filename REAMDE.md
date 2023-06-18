@@ -14,9 +14,11 @@ https://xdebug.org/docs/install
 # sudo apt-get install php-xdebugxdebug -v
 
 configuration postgresql: https://stackoverflow.com/questions/32439167/psql-could-not-connect-to-server-connection-refused-error-when-connecting-to
-
-
-# cd /workspaces/poug/ 
-Créer un utilisateur pgsql
 # symfony run psql
+# symfony run pg_dump --data-only > dump.sql
+
+Créer un utilisateur pgsql
+CREATE TABLE table1 OWNER app;
+INSERT INTO table1 (champ1, champ2) VALUES (value1, value2);
+
 
