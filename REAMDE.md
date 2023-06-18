@@ -16,6 +16,9 @@ sudo apt install php-intl &&
 docker-compose up -d &&
 composer require symfony/orm-pack &&
 composer require symfony/maker-bundle --dev &&
+symfony run psql 
+
+ALTER USER app PASSWORD root;
 
 
 # symfony run psql
@@ -26,3 +29,11 @@ CREATE TABLE table1;
 INSERT INTO table1 (champ1, champ2) VALUES (value1, value2);
 
 
+Redémarrer postgresql
+# sudo /etc/init.d/postgresql restart
+
+tester la connexion
+# psql -h localhost -U app -p 5432 app
+
+informations de connextions:
+# \conninfo
